@@ -135,29 +135,40 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 /**
  * Create restaurant HTML.
  */
+let tabIndex = 4;
+
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
+  li.tabIndex = ++tabIndex;
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
+  image.alt = restaurant.name;
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.tabIndex = ++tabIndex;
   li.append(image);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  name.tabIndex = ++tabIndex;
   li.append(name);
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.tabIndex = ++tabIndex;
   li.append(neighborhood);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.tabIndex = ++tabIndex;
   li.append(address);
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+  more.tabIndex = ++tabIndex;
+  more.setAttribute('role','button');
+  more.title = `Navigate to ${restaurant.name} reviews page.`;
   li.append(more)
 
   return li

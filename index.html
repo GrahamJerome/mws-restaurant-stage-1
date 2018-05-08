@@ -17,30 +17,32 @@
 <body>
   <header>
     <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+      <h1><a href="/" tabIndex="1" role="heading">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" tabIndex="-1" role="application"></div>
     </section>
     <section>
       <div class="filter-options">
-        <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+        <h2 tabIndex="2">Filter Results</h2>
+        <select tabIndex="3" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" aria-describedby="neighborhoods-tip">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <div role="tooltip" id="neighborhoods-tip">Select which neighborhood to search</div>
+        <select tabIndex="4" id="cuisines-select" name="cuisines" onchange="updateRestaurants()"aria-describedby="cuisines-tip">
           <option value="all">All Cuisines</option>
         </select>
+        <div role="tooltip" id="cuisines-tip">Select which cuisine to search</div>
       </div><!--.filter-options-->
       <ul id="restaurants-list"></ul>
     </section>
   </main>
 
   <footer id="footer">
-    <p>Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</p>
+    <p tabIndex="999">Copyright (c) 2017 <a href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.</p>
   </footer>
 
   <!-- scripts -->
