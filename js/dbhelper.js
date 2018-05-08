@@ -24,7 +24,6 @@ class DBHelper {
         const restaurants = json.restaurants;
         callback(null, restaurants);
       } else { // Oops!. Got an error from server.
-        console.log('offline DB');
         event.respondWith(
             caches.match(event.request).then(function(response) {
               return response;
