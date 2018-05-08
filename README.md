@@ -23,6 +23,7 @@ With your server running, visit the site: `http://localhost:8000`.
 2. the lsit of restaurants will take a moment to load.
 3. once they are loaded you will be able to navigate the available options, bringing you to their current reviews page.
 4. to filter your options, use the filter selectors just below the map.
+5. to test the caching capabilities, work in offline mode and refresh the page.
 
 
 ## Dependancies
