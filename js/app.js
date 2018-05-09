@@ -1,5 +1,5 @@
-navigator.serviceWorker.register('js/sw.js').then(function(reg) {
-	console.log('service worker loaded.');
+navigator.serviceWorker.register('/sw.js').then(function(reg) {
+	console.log(reg);
 }).catch(function(err) {
-	console.log('service worker failed.');
+	console.log(err);
 });
